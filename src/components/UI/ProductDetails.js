@@ -12,7 +12,7 @@ const ProductDetails = ({ product }) => {
             <li key={feature}>{feature}</li>
           ))}
         </ul>
-        <button className="btn btn-neutral">Buy Now</button>
+        <button className="btn btn-accent">Buy Now</button>
       </div>
     </div>
   );

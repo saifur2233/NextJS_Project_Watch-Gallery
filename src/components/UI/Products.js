@@ -11,7 +11,7 @@ const Products = ({ product }) => {
         Availability: {product?.status ? "In stock" : "Out of stock"}
       </p>
       <p className="text-sm">Price: {product?.price}</p>
-      <button className="btn btn-neutral">Add to cart</button>
+      <button className="btn btn-secondary">Add to cart</button>
     </div>
   );
 };
