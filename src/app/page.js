@@ -1,15 +1,23 @@
+import Products from "@/components/UI/Products";
 import React from "react";
 
-const HomePage = () => {
+const HomePage = async () => {
+  const res = await fetch("http://localhost:5000/watches", {
+    cache: "force-cache",
+    next: {
+      revalidate: 5,
+    },
+  });
+  const data = await res.json();
+  console.log(data);
   return (
     <div>
-      <button className="btn">Button</button>
-      <button className="btn btn-neutral">Neutral</button>
-      <button className="btn btn-primary">Primary</button>
-      <button className="btn btn-secondary">Secondary</button>
-      <button className="btn btn-accent">Accent</button>
-      <button className="btn btn-ghost">Ghost</button>
-      <button className="btn btn-link">Link</button>
+      <h1 className="text-4xl text-center my-10">Welcome To Watch Gallery</h1>
+      <div className="col-span-9 grid grid-cols-3 gap-5 p-10 w-[80%] mx-auto">
+        {data.map((product) => (
+          <Products key={product.id} product={product}></Products>
+        ))}
+      </div>
     </div>
   );
 };
