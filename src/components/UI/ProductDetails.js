@@ -1,4 +1,5 @@
 const ProductDetails = ({ product }) => {
+  console.log(product);
   return (
     <div className="flex max-w-7xl mx-auto items-center border-b border-gray-300 w-[80%]">
       <div className="w-[50%]">
